@@ -6,12 +6,12 @@ $(document).ready(function() {
  var warrior = new Human();
  warrior.setWeapon(new Axe());
  warrior.generateClass();  // This will be used for "Surprise me" option
- console.log(warrior.toString());
+ console.log("warrior", warrior.toString());
 
  var orc = new Orc();
  orc.generateClass();
  orc.setWeapon(new Sword());
- console.log(orc.toString());
+ console.log("orc", orc.toString());
 
  /*
    Test code to generate a spell
@@ -50,27 +50,37 @@ $(document).ready(function() {
    }
  });
 
- // // var refObj = {
- // //   'Warrior': Warrior,
- // //   'Valkyrie': Valkyrie,
-
-
-
- // }
+////// save click on characters ////////
  var chosenClass;
 
  $(".class__link").click(function (event) {
-   //grab the inner HTML
-   var className = event.target.value;
-   console.log(className);
-   chosenClass = className;
+
+     chosenClass = $(this).html();  //getting string value
+     var charSave = new window[chosenClass]();
+     console.log("charsave", charSave);
  })
+
+///////save click on weapons
+
+var chosenWeaponClass;
+
+ $(".class__link").click(function (event) {
+     chosenWeaponClass = $(this).html();  //getting string value
+     var weaponSave = new window[chosenWeaponClass]();
+     console.log("weaponSave", weaponSave);
+ })
+
+
 
  // function () {
  //   player = new chosenClass();
+
  // }
 
-
+ // var warrior = new Human();
+ // warrior.setWeapon(new Axe());
+ // warrior.generateClass();  // This will be used for "Surprise me" option
+ // console.log("warrior", warrior.toString());
 
  /*
    When the back button clicked, move back a view
@@ -91,8 +101,10 @@ $(document).ready(function() {
      'Conjurer': Conjurer,
      'Thief': Thief,
      'Ninja': Ninja,
-     'Assasin': Assasin
+     'Assassin': Assassin
    };
+
+
 
 
 });

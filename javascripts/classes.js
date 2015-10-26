@@ -112,7 +112,7 @@ var Thief = function() {
   this.strengthBonus = this.strengthBonus - 5;
   this.intelligenceBonus = this.intelligenceBonus + 15;
 };
-Ninja.prototype = new Stealth();
+Thief.prototype = new Stealth();
 var Ninja = function() {
   this.name = "Ninja";
   this.healthBonus = this.healthBonus + 15;

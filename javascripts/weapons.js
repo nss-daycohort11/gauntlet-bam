@@ -1,5 +1,5 @@
-var Weapon = function() {
-  this.name = "bare hands";
+var Barehands = function() {
+  this.name = "Barehands";
   this.damage = 1;
   this.hands = 2;
 
@@ -13,21 +13,21 @@ var Bow = function() {
   this.damage = 10;
   this.hands = 2;
 };
-Bow.prototype = new Weapon();
+Bow.prototype = new Barehands();
 
 var Sword = function() {
   this.name = "sword";
   this.damage = 14;
   this.hands = 2;
 };
-Sword.prototype = new Weapon();
+Sword.prototype = new Barehands();
 
 var Axe = function() {
   this.name = "axe";
   this.damage = 18;
   this.hands = 2;
 };
-Axe.prototype = new Weapon();
+Axe.prototype = new Barehands();
 
 
 
