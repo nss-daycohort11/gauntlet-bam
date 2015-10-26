@@ -6,12 +6,12 @@ $(document).ready(function() {
   var warrior = new Human();
   warrior.setWeapon(new WarAxe());
   warrior.generateClass();  // This will be used for "Surprise me" option
-  console.log(warrior.toString());
+  console.log("warrior", warrior.toString());
 
   var orc = new Orc();
   orc.generateClass();
   orc.setWeapon(new BroadSword());
-  console.log(orc.toString());
+  console.log("orc", orc.toString());
 
   /*
     Test code to generate a spell
