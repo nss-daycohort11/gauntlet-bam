@@ -4,13 +4,13 @@ $(document).ready(function() {
     Test code to generate a human player and an orc player
    */
   var warrior = new Human();
-  warrior.setWeapon(new WarAxe());
+  warrior.setWeapon(new Axe());
   warrior.generateClass();  // This will be used for "Surprise me" option
   console.log(warrior.toString());
 
   var orc = new Orc();
   orc.generateClass();
-  orc.setWeapon(new BroadSword());
+  orc.setWeapon(new Sword());
   console.log(orc.toString());
 
   /*
@@ -62,14 +62,14 @@ $(document).ready(function() {
 
   // var chosenClass;
 
-  $(".class__link").click(function (event) {
-    //grab the inner HTML
-    var className = event.target.value;
-    console.log(className);
-    chosenClass = className;
+  // $(".class__link").click(function (event) {
+  //   //grab the inner HTML
+  //   var className = event.target.value;
+  //   console.log(className);
+  //   chosenClass = className;
 
-    Player.prototype.setClass();
-  })
+  //   Player.prototype.setClass();
+  // })
 
   // function () {
   //   player = new chosenClass();
