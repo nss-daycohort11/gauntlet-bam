@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,11 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
 </head>
-
 <body>
-
   <article id="game-container">
-
     <section id="player-setup" class="card card--name">
       <div class="card__prompt">
         <div>RECORD YOUR NAME, ADVENTURER</div>
@@ -20,7 +16,6 @@
           <input type="text" autofocus="true" id="player-name" class="field__textinput">
         </div>
       </div>
-
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
@@ -30,7 +25,6 @@
         </a>
       </div>
     </section>
-
     <section id="class-select" class="card card--class">
       <div class="card__prompt">
         <div>CHOOSE YOUR PATH</div>
@@ -43,93 +37,55 @@
           </a>          
         </div>
       </div>
-
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4">
             <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Warrior</span>
-              </a>
+              <button class="class__link btn btn--big btn--blue" value="warrior">Warrior</button>
             </div>      
             
             <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Valkyrie</span>
-              </a>
+              <button class="class__link btn btn--big btn--blue" value="valkyrie">Valkyrie</button>
             </div>      
             
             <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">berserker</span>
-              </a>
+              <button class="class__link btn btn--big btn--blue" value="berserker">Berserker</button>
             </div>      
             
             <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Monk</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="col-sm-4">
-            <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Wizard</span>
-              </a>
-            </div>
-            
-            <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Sorcerer</span>
-              </a>
-            </div>
-            
-            <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Conjurer</span>
-              </a>
+              <button class="class__link btn btn--big btn--blue" value="monk">Monk</button>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Thief</span>
-              </a>
+              <button class="class__link btn btn--big btn--blue" value="wizard">Wizard</button>
             </div>
             
             <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Ninja</span>
-              </a>
+              <button class="class__link btn btn--big btn--blue" value="sorcerer">Sorcerer</button>
             </div>
-
+            
             <div class="card__button">
-              <a class="class__link btn btn--big btn--blue" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">Assassin</span>
-              </a>
+              <button class="class__link btn btn--big btn--blue" value="conjurer">Conjurer</button>
             </div>
-
+          </div>
+          <div class="col-sm-4">
             <div class="card__button">
-              <a class="class__link btn btn--big btn--yellow" href="#">
-                <span class="btn__prompt">></span>
-                <span class="btn__text">surprise me</span>
-              </a>
+              <button class="class__link btn btn--big btn--blue" value="thief">Thief</button>
+            </div>
+            
+            <div class="card__button">
+              <button class="class__link btn btn--big btn--blue" value="ninja">Ninja</button>
+            </div>
+            <div class="card__button">
+              <button class="class__link btn btn--big btn--blue" value="assassin">Assassin</button>
+            </div>
+            <div class="card__button">
+              <button class="class__link btn btn--big btn--yellow" value="surprise me">surprise me</button>
             </div>
           </div>
         </div>
       </div>
-
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
@@ -139,7 +95,6 @@
         </a>
       </div>
     </section>
-
     <section id="weapon-select" class="card card--weapon">
       <div class="card__prompt">
         <div>choose your weapon</div>
@@ -152,7 +107,30 @@
           </a>          
         </div>
       </div>
-
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card__button">
+              <button class="class__link btn btn--big btn--blue" value="bare-hands">Barehands</button>
+            </div>      
+            
+            <div class="card__button">
+              <button class="class__link btn btn--big btn--blue" value="bow">Bow</button>
+            </div>      
+            
+            <div class="card__button">
+              <button class="class__link btn btn--big btn--blue" value="sword">Sword</button>
+            </div>      
+            
+            <div class="card__button">
+              <button class="class__link btn btn--big btn--blue" value="axe">Axe</button>
+            </div>
+          </div>
+            
+            
+          </div>
+        </div>
+      </div>
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
@@ -161,12 +139,10 @@
           <span class="btn__text">defeat your enemies</span>
         </a>
       </div>
+      
     </section>
-
     <section id="battleground" class="card card--battleground"></section>
-
   </article>
-
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="javascripts/player.js"></script>
   <script src="javascripts/classes.js"></script>
@@ -174,6 +150,5 @@
   <script src="javascripts/spells.js"></script>
   <script src="javascripts/enemies.js"></script>
   <script src="javascripts/app.js"></script>
-
 </body>
 </html>

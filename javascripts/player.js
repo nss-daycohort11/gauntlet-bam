@@ -38,6 +38,7 @@ Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
 }
 
+
 Player.prototype.generateClass = function() {
   // Get a random index from the allowed classes array
   var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
@@ -67,7 +68,7 @@ var Human = function() {
   randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
   this.skinColor = this.skinColors[randomSkin];
 
-  this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk"];
+  this.allowedClasses = ["Warrior", "Berserker", "Valkyrie", "Monk", "Thief", "Ninja", "Assassin", "Wizard", "Conjurer", "Sorcerer"];
 };
 Human.prototype = new Player();
 
