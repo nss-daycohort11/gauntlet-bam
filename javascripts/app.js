@@ -50,6 +50,34 @@ $(document).ready(function() {
     }
   });
 
+  // var refObj = {
+  //   'Warrior': Warrior,
+  //   'Valkyrie': Valkyrie,
+
+
+
+
+  // }
+
+
+  // var chosenClass;
+
+  $(".class__link").click(function (event) {
+    //grab the inner HTML
+    var className = event.target.value;
+    console.log(className);
+    chosenClass = className;
+
+    Player.prototype.setClass();
+  })
+
+  // function () {
+  //   player = new chosenClass();
+  // }
+
+
+
+
   /*
     When the back button clicked, move back a view
    */
