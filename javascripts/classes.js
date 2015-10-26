@@ -6,6 +6,7 @@ var PlayerClass = function() {
   this.healthBonus = 0;
   this.strengthBonus = 0;
   this.intelligenceBonus = 0;
+  this.stealthBonus = 0;
   this.magical = false;
 
   this.toString = function() {
@@ -31,6 +32,7 @@ var Warrior = function() {
   this.name = "Warrior";
   this.healthBonus = this.healthBonus + 25;
   this.strengthBonus = this.strengthBonus + 30;
+  this.stealthBonus = this.stealthBonus - 5;
 };
 Warrior.prototype = new Fighter();
 
@@ -39,6 +41,7 @@ var Valkyrie = function() {
   this.name = "Valkyrie";
   this.healthBonus = this.healthBonus + 20;
   this.strengthBonus = this.strengthBonus + 10;
+  this.stealthBonus = this.stealthBonus - 5;
 };
 Valkyrie.prototype = new Fighter();
 
@@ -47,6 +50,7 @@ var Berserker = function() {
   this.name = "Berserker";
   this.healthBonus = this.healthBonus + 35;
   this.strengthBonus = this.strengthBonus + 20;
+  this.stealthBonus = this.stealthBonus -10;
 };
 Berserker.prototype = new Fighter();
 
@@ -54,7 +58,7 @@ Berserker.prototype = new Fighter();
 var Monk = function() {
   this.name = "Monk";
   this.healthBonus = this.healthBonus + 10;
-  this.strengthBonus = this.strengthBonus + 40;
+  this.strengthBonus = this.stealthBonus + 40;
 };
 Monk.prototype = new Fighter();
 
@@ -117,4 +121,40 @@ Sorcerer.prototype = new Mage();
       - Ninja
       - Assassin
  */
+
+var Stealth = function() {
+  this.healthBonus = - 5;
+  this.strengthBonus = - 15;
+  this.intelligenceBonus = + 5;
+  this.stealthBonus = + 5;
+};
+Stealth.prototype = new PlayerClass();
+
+var Thief = function() {
+  this.name = "Thief";
+  this.healthBonus = this.healthBonus + 5;
+  this.strengthBonus = this.strengthBonus - 5;
+  this.intelligenceBonus = this.intelligenceBonus + 15;
+};
+Ninja.prototype = new Stealth();
+
+var Ninja = function() {
+  this.name = "Ninja";
+  this.healthBonus = this.healthBonus + 15;
+  this.strengthBonus = this.strengthBonus - 5;
+  this.intelligenceBonus = this.intelligenceBonus + 15;
+  this.stealthBonus = this.stealthBonus + 10;
+};
+Ninja.prototype = new Stealth();
+
+var Assassin = function() {
+  this.name = "Assassin";
+  this.healthBonus = this.healthBonus + 10;
+  this.strengthBonus = this.strengthBonus - 10;
+  this.intelligenceBonus = this.intelligenceBonus + 10;
+  this.stealthBonus = this.stealthBonus + 5;
+};
+Assassin.prototype = new Stealth();
+
+
 

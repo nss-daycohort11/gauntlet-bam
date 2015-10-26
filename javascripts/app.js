@@ -40,7 +40,10 @@ $(document).ready(function() {
         moveAlong = ($("#player-name").val() !== "");
         break;
       case "card--weapon":
-        moveAlong = ($("#player-name").val() !== "");
+        moveAlong = ($(".class__link").click());
+        break;
+      case "card--battleground":
+        moveAlong = ($(".class__link").click());
         break;
     }
 
@@ -58,5 +61,7 @@ $(document).ready(function() {
     $(".card").hide();
     $("." + previousCard).show();
   });
+
+
 
 });
