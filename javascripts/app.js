@@ -68,8 +68,9 @@ $("#player-setup .card__button").click(function() {
 ////// save click on characters ////////
  var chosenClass;
  $(".class__link").click(function (event) {
-     chosenClass = $(this).html();  
-     var charSave = new window[chosenClass]();
+     chosenClass = $(this).html();
+     // new window['Valkyrie']()  
+     var charSave = new window[chosenClass]();   //window is the global object, it emcompasses EVERYTTHING inside the browser, you can access it across multiple pages, all files, whatever. it is everything.
      console.log("charsave", charSave);
      currentPlayer.class = charSave;
      console.log("current player", currentPlayer);
@@ -95,8 +96,7 @@ $(".start__link").click(function(event) {
     console.log("orc", orc);
     console.log("enemyplayer", enemyPlayer);
     console.log("currentPlayer", currentPlayer);
-    $("#human-stats").append("<p>" + currentPlayer.toString() + "<br/> Current Health is "+"<span>"+ currentPlayer.health +"</span><p>"+
-        "<p>Current Strength is "+"<span>"+ currentPlayer.strength+"</span><p>"+
+    $("#human-stats").append("<p>" + currentPlayer.toString() + "<br/><p>Current Strength is "+"<span>"+ currentPlayer.strength+"</span><p>"+
         "<p>Current Intelligence is "+"<span>"+ currentPlayer.intelligence+"</span><p><br/>"); 
     
        $("#enemy-stats").append( "<p>" + orc.toString() + "<br/> Current Health is "+"<span>"+ enemyPlayer.health+"</span><p>"+
@@ -132,4 +132,20 @@ $(".start__link").click(function(event) {
     }
   })
 });
+
+
+<script>
+  function play(){
+       var audio = document.getElementById("audio");
+       audio.play();
+                 }
+</script>
+
+<input type="button" value="PLAY"  onclick="play()">
+<audio id="audio" src="http://dev.interactive-creation-works.net/1/1.ogg" ></audio>
+ </body>
+
+
+
+
 
