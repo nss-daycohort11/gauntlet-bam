@@ -75,5 +75,6 @@ var Monster = function() {
   this.intelligence = this.intelligence -20;
   this.strength = this.strength + 30;
   this.allowedClasses = ["Dwight", "Toby", "Angela", "Creed"];
+  this.skinColors.push("brown", "red", "white", "disease");
 };
 Monster.prototype = new Player();

@@ -6,13 +6,13 @@ $(document).ready(function() {
    Test code to generate a human player and an orc player
   */
  var warrior = new Human();
- warrior.setWeapon(new Beets());
+ warrior.setWeapon(new Barehands());
 
  warrior.generateClass();  // This will be used for "Surprise me" option
- // console.log("warrior", warrior.toString());
+ console.log("warrior", warrior.toString());
 
  var thebadguy = new BadGuys();
- thebadguy.setWeapon(new Beets());
+ thebadguy.setWeapon(new Barehands());
  thebadguy.generateClass();
  console.log("thebadguy", thebadguy.toString());
  console.log(thebadguy)

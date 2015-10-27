@@ -2,6 +2,9 @@ var BadGuys = function() {
   this.health = this.health + 20;
   this.species = "Office Worker";
   this.allowedClasses = ["Dwight", "Toby", "Angela", "Creed"];
+  this.skinColors.push("brown", "red", "white", "disease");
+  randomSkin = Math.round(Math.random() * (this.skinColors.length-1));
+  this.skinColor = this.skinColors[randomSkin];
   
   // this.generateClass = function() {
   //   // Get a random index from the allowed classes array

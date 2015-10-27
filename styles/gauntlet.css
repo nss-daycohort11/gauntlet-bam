@@ -4,45 +4,48 @@ body {
   padding: 10px;
   font-size: 3em;
 }
-
 .field {
   margin: 20px 0 0 0;
 }
-
 .field__textinput {
   font-size: 1em;
   padding: 15px 0;
   text-align: center;
   min-width: 500px;
 }
-
-
-
+/*images*/
+.record-name-image {
+  height: 400px;
+  width: 400px;
+  background-image: url("http://media1.popsugar-assets.com/files/upl1/1/13839/33_2008/1OFFakN04/i/Rainn-Wilson-Dwight-Schrute-Ad-Office-2008-Olympics.jpg");
+  repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+}
 /*
   Section styles
  */
 .card { 
   display: none;
 }
-
 .card__prompt {
   font-size: 1.1em;
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
 }
-
 .card__button {
   font-size: 1.1em;
   margin: 30px 0 0 0;
   text-align: center;
 }
-
-
+.arrange_card {
+  display: inline-block;
+}
 /*
   Button styles
  */
-
 .btn {
   text-decoration: none;
   background-color: white;
@@ -56,35 +59,76 @@ body {
   padding: 10px 5px;
   min-width: 260px;
 }
-
 .btn--orange {
   border-color: #FF4136;
   color: white;
   background-color: #FF4136;
 }
-
 .btn--blue {
   border-color: #0074D9;
-  color: white;
-  background-color: #0074D9;
+  
+  
 }
-
+.btn-michael {
+  background-image: url(http://cdn1.theodysseyonline.com/files/2015/08/24/6357600113572837231773916132_michael-scott-s-top-tantrums.png);
+  height: 220px;
+  color: white;
+}
+.btn-jim {
+  background-image: url(http://www.officetally.com/wp-content/uploads/2010/10/jim-halpert-popeye.jpg);
+  height: 220px;
+  color: white;
+}
+.btn-pam {
+  background-image: url(http://armchairmogul.files.wordpress.com/2009/12/pam-beesly-naked1.jpg);
+  height: 220px;
+  color: white;
+}
+.btn-andy {
+  background-image: url(http://hilarywgraham.files.wordpress.com/2012/03/andy-andy-bernard-22624931-380-370.jpg);
+  height: 220px;
+  color: white;
+}
+.btn-barehands {
+  background-image: url(https://nyoobserver.files.wordpress.com/2015/07/11698687_10153078080808212_494334032945439588_n.jpg?quality=80);
+  background-repeat: no-repeat;
+  height: 220px;
+  color: white;
+  background-size: cover;
+}
+.btn-beets {
+  background-image: url(http://media.giphy.com/media/wsI3JXskEGv5u/giphy.gif);
+  height: 220px;
+  color: white;
+}
+.btn-banjo {
+  background-image: url(http://i117.photobucket.com/albums/o43/Laura_History/humorous/animated/godfather-strumming-banjo.gif);
+  height: 220px;
+  color: white;
+}
+.btn-cat {
+  background-image: url(http://i29.tinypic.com/2u9mo81.jpg);
+  height: 220px;
+  color: white;
+}
+.btn-nunchucks {
+  background-image: url(https://33.media.tumblr.com/09fb06ecfb97f6678030fc307bca80f0/tumblr_nmxv4mPcqK1s54oibo1_400.gif);
+  height: 200px;
+  color: white;
+}
 .btn--yellow {
   border-color: #E4BD00;
   color: white;
   background-color: #F3C500;
 }
-
 .btn--big {
   font-size: 28px;
   padding: 10px;
   font-weight: 400;
 }
-
 .btn--small {
   min-width: 50px;
 }
-
 .btn__prompt {
   background-color: white;
   color: #fff;
@@ -98,7 +142,6 @@ body {
   left: 37px;
   float: left;
 }
-
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
