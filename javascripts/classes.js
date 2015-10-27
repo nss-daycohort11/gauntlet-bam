@@ -12,6 +12,8 @@ var PlayerClass = function() {
     return this.name;
   }
 };
+
+
 /*
     FIGHTER CLASSES
       - Warrior
@@ -58,6 +60,8 @@ var Monk = function() {
   this.strengthBonus = this.stealthBonus + 40;
 };
 Monk.prototype = new Fighter();
+
+
 /*
     MAGICAL CLASSES
       - Shaman
@@ -104,6 +108,9 @@ var Sorcerer = function() {
   this.intelligenceBonus = this.intelligenceBonus + 30;
 };
 Sorcerer.prototype = new Mage();
+
+
+
 /*
     STEALTH CLASSES
       - Thief
