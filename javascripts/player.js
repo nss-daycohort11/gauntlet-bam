@@ -14,7 +14,7 @@ var Player = function(name) {
   this.strength = 90;
   this.intelligence = 90;
   this.toString = function() {
-    console.log(this.weapon)
+    // console.log(this.weapon)
     // console.log(this.weapon.toString())
     // console.log("class", this.class)
     var output = [this.playerName,
@@ -40,12 +40,13 @@ Player.prototype.setWeapon = function(newWeapon) {
 Player.prototype.generateClass = function() {
   // Get a random index from the allowed classes array
   var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
-  console.log("player random", random);
+  // console.log("player random", random);
   // Get the string at the index
   var randomClass = this.allowedClasses[random];
-  console.log("random class", randomClass);
+  // console.log("random class", randomClass);
   // Composes the corresponding player class into the player object
   this.class = new window[randomClass]();
+  console.log(this)
   console.log("this class", this.class)
   // Add the health bonus
   this.health += this.class.healthBonus;

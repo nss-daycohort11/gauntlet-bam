@@ -68,6 +68,7 @@ Andy.prototype = new Fighter();
 
 
 var Dwight = function() {
+  this.name = "Dwight"
   this.healthBonus = 20;
   this.strengthBonus = 10;
 };
@@ -75,18 +76,21 @@ Dwight.prototype = new PlayerClass();
 
 
 var Toby = function() {
+  this.name = "Toby"
   this.healthBonus = 20;
   this.strengthBonus = 10;
 };
 Toby.prototype = new PlayerClass();
 
 var Angela = function() {
+  this.name = "Angela"
   this.healthBonus = 20;
   this.strengthBonus = 10;
 };
 Angela.prototype = new PlayerClass();
 
 var Creed = function() {
+  this.name = "Creed"
   this.healthBonus = 20;
   this.strengthBonus = 10;
 };

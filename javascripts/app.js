@@ -9,7 +9,7 @@ $(document).ready(function() {
  warrior.setWeapon(new Beets());
 
  warrior.generateClass();  // This will be used for "Surprise me" option
- console.log("warrior", warrior.toString());
+ // console.log("warrior", warrior.toString());
 
  var thebadguy = new BadGuys();
  thebadguy.setWeapon(new Beets());
@@ -23,12 +23,11 @@ $(document).ready(function() {
 
  // console.log(thebadguy)
  // console.log('after weapon', thebadguy)
- console.log("thebadguy", thebadguy.toString());
  /*
    Test code to generate a spell
   */
- var spell = new Sphere();
- console.log("spell: ", spell.toString());
+ // var spell = new Sphere();
+ // console.log("spell: ", spell.toString());
  /*
    END OF TEST CODE
    Show the initial view that accepts player name
