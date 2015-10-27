@@ -99,6 +99,7 @@
         </a>
       </div>
     </section>
+
     <section id="weapon-select" class="card card--weapon">
       <div class="card__prompt">
         <div>choose your weapon</div>
@@ -111,6 +112,7 @@
           </a>          
         </div>
       </div>
+
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-4">
@@ -145,7 +147,24 @@
       </div>
       
     </section>
-    <section id="battleground" class="card card--battleground"></section>
+    <section id="battleground" class="card card--battleground">
+        <div>BATTLEFIELD</div>
+        <span id="startGame" class="card__button start">
+              <button class="start__link btn btn--big btn--orange" 
+                next="card--battle" value="start">
+                <span class="btn__text">Start</span>
+              </button>
+      </span>
+        <span id="attackEnemy" class="card__button enemy">
+              <button class="attack__link btn btn--big btn--orange" 
+                next="card--battle" value="attack">
+                <span class="btn__text">Attack!!!!</span>
+              </button>
+      </span>
+      <p id="human-stats"></p>
+          <p id="enemy-stats"></p>
+        <!-- <div  id="battle-record"></div>     -->
+     </section>
   </article>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="javascripts/player.js"></script>

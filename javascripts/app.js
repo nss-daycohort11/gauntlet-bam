@@ -68,7 +68,7 @@ var currentPlayer = new Human();
 //store player name
 $("#player-setup .card__button").click(function() { 
   console.log("Current player name", $("#player-name").val());
-  currentPlayer.playername = $("#player-name").val();
+  currentPlayer.playerName = $("#player-name").val();
 
 });
 
@@ -87,26 +87,52 @@ $("#player-setup .card__button").click(function() {
 
 ///////save click on weapons
 
-var chosenWeaponClass;
+  var chosenWeaponClass;
 
- $(".weapon__link").click(function (event) {
-     chosenWeaponClass = $(this).html();  //getting string value
-     var weaponSave = new window[chosenWeaponClass]();
-      console.log("weaponSave", weaponSave);
-     currentPlayer.Weapon = weaponSave;
-     console.log("current player w/ weapon", currentPlayer);
+   $(".weapon__link").click(function (event) {
+       chosenWeaponClass = $(this).html();  //getting string value
+       var weaponSave = new window[chosenWeaponClass]();
+        console.log("weaponSave", weaponSave);
+       currentPlayer.weapon = weaponSave;
+       console.log("current player w/ weapon", currentPlayer);
 
-
-
-  });
+   });
 
 
 
+////////battlefield
+var enemyPlayer;
+$(".start__link").click(function(event) {
+    enemyPlayer = orc;
+    console.log("orc", orc);
+    console.log("enemyplayer", enemyPlayer);
+    console.log("currentPlayer", currentPlayer);
+
+    $("#human-stats").append("<p>" + currentPlayer.toString() + "Current Health is "+"<span>"+ currentPlayer.health +"</span><p>"+
+        "<p>Current Strength is "+"<span>"+ currentPlayer.strength+"</span><p>"+
+        "<p>Current Intelligence is "+"<span>"+ currentPlayer.intelligence+"</span><p>"); 
+    
+       $("#enemy-stats").append( "<p>" + orc.toString() + "Current Health is "+"<span>"+ enemyPlayer.health+"</span><p>"+
+          "<p>Current Strength is "+"<span>"+ enemyPlayer.strength+"</span><p>"+
+          "<p>Current Intelligence is "+"<span>"+ enemyPlayer.intelligence+"</span><p>");
+       console.log("enemyPlayerHealth", enemyPlayer.health);
+});
 
 
 
 
 
+////////////attack
+  $(".attack__link").click(function(event) {
+    currentPlayer.health = currentPlayer.health - enemyPlayer.weapon.damage;
+    enemyPlayer.health = enemyPlayer.health - currentPlayer.weapon.damage;
+    if (currentPlayer.health <= 0) {
+      alert("The Enemy Won");
+    }
+    if (enemyPlayer.health <= 0) {
+      alert("You Win!!!");
+    }
+  })
 
 });
 
