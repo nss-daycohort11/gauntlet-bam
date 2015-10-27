@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -8,11 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="styles/gauntlet.css">
 </head>
-
 <body>
-
   <article id="game-container">
-
     <section id="player-setup" class="card card--name">
       <div class="card__prompt">
         <div>RECORD YOUR NAME, ADVENTURER</div>
@@ -20,7 +16,6 @@
           <input type="text" autofocus="true" id="player-name" class="field__textinput">
         </div>
       </div>
-
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
@@ -30,7 +25,6 @@
         </a>
       </div>
     </section>
-
     <section id="class-select" class="card card--class">
       <div class="card__prompt">
         <div>CHOOSE YOUR PATH</div>
@@ -43,10 +37,8 @@
           </a>          
         </div>
       </div>
-
       <div class="container-fluid">
         <div class="row">
-
           <div class="col-sm-4">
             <div class="card__button">
               <button class="class__link btn btn--big btn--blue" value="warrior">Warrior</button>
@@ -64,7 +56,6 @@
               <button class="class__link btn btn--big btn--blue" value="monk">Monk</button>
             </div>
           </div>
-
           <div class="col-sm-4">
             <div class="card__button">
               <button class="class__link btn btn--big btn--blue" value="wizard">Wizard</button>
@@ -86,18 +77,15 @@
             <div class="card__button">
               <button class="class__link btn btn--big btn--blue" value="ninja">Ninja</button>
             </div>
-
             <div class="card__button">
               <button class="class__link btn btn--big btn--blue" value="assassin">Assassin</button>
             </div>
-
             <div class="card__button">
               <button class="class__link btn btn--big btn--yellow" value="surprise me">surprise me</button>
             </div>
           </div>
         </div>
       </div>
-
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
@@ -107,7 +95,6 @@
         </a>
       </div>
     </section>
-
     <section id="weapon-select" class="card card--weapon">
       <div class="card__prompt">
         <div>choose your weapon</div>
@@ -120,10 +107,8 @@
           </a>          
         </div>
       </div>
-
       <div class="container-fluid">
         <div class="row">
-
           <div class="col-sm-4">
             <div class="card__button">
               <button class="weapon__link btn btn--big btn--blue" value="bare-hands">Barehands</button>
@@ -146,9 +131,6 @@
           </div>
         </div>
       </div>
-
-
-
       <div class="card__button">
         <a class="card__link btn btn--big btn--orange" 
            href="#" 
@@ -157,13 +139,27 @@
           <span class="btn__text">defeat your enemies</span>
         </a>
       </div>
-
+      
     </section>
-
-    <section id="battleground" class="card card--battleground"></section>
-
+    <section id="battleground" class="card card--battleground">
+        <div>BATTLEFIELD</div>
+        <span id="startGame" class="card__button start">
+              <button class="start__link btn btn--big btn--orange" 
+                next="card--battle" value="start">
+                <span class="btn__text">Start</span>
+              </button>
+      </span>
+        <span id="attackEnemy" class="card__button enemy">
+              <button class="attack__link btn btn--big btn--orange" 
+                next="card--battle" value="attack">
+                <span class="btn__text">Attack!!!!</span>
+              </button>
+      </span>
+      <div id="human-stats"></div>
+          <div id="enemy-stats"></div>
+            <div  id="battle-record"></div>    
+     </section>
   </article>
-
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="javascripts/player.js"></script>
   <script src="javascripts/classes.js"></script>
@@ -171,6 +167,5 @@
   <script src="javascripts/spells.js"></script>
   <script src="javascripts/enemies.js"></script>
   <script src="javascripts/app.js"></script>
-
 </body>
 </html>

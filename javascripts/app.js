@@ -34,44 +34,17 @@ $(document).ready(function() {
      case "card--weapon":
        moveAlong = ($("#player-name").val() !== "");
        break;
+     case "card--battleground":
+      moveAlong = ($("#player-name").val() !== "");
+      break;
    }
+// when the button clicked, move back a view
    if (moveAlong) {
      $(".card").hide();
      $("." + nextCard).show();
    }
  });
- // // var refObj = {
- // //   'Warrior': Warrior,
- // //   'Valkyrie': Valkyrie,
- // }
- var chosenClass;
- $(".class__link").click(function (event) {
-   //grab the inner HTML
-   chosenClass = $(this).html();
-   //console.log(chosenClass.length);
-   var charSave = new window[chosenClass]();
-   console.log(charSave);
- })
-
- var chosenWeaponClass;
- $(".weapon__link").click(function (event) {
-   //grab the inner HTML
-   chosenWeaponClass = $(this).html();
-   //console.log(chosenClass.length);
-   var weaponSave = new window[chosenWeaponClass]();
-   console.log(weaponSave);
- })
-
-
- // function () {
- //   player = new chosenClass();
- // }
-
-
-
-
-
- /*
+  /*
    When the back button clicked, move back a view
   */
  $(".card__back").click(function(e) {
@@ -79,19 +52,74 @@ $(document).ready(function() {
    $(".card").hide();
    $("." + previousCard).show();
  });
+//current player
+var currentPlayer = new Human();
+//store player name
+$("#player-setup .card__button").click(function() { 
+  console.log("Current player name", $("#player-name").val());
+  currentPlayer.playerName = $("#player-name").val();
+});
+////// save click on characters ////////
+ var chosenClass;
+ $(".class__link").click(function (event) {
+     chosenClass = $(this).html();  
+     var charSave = new window[chosenClass]();
+     console.log("charsave", charSave);
+     currentPlayer.class = charSave;
+     console.log("current player", currentPlayer);
+ })
+///////save click on weapons
+  var chosenWeaponClass;
+   $(".weapon__link").click(function (event) {
+       chosenWeaponClass = $(this).html();  //getting string value
+       var weaponSave = new window[chosenWeaponClass]();
+        console.log("weaponSave", weaponSave);
+       currentPlayer.weapon = weaponSave;
+       console.log("current player w/ weapon", currentPlayer);
+   });
+////////battlefield
+var enemyPlayer;
+$(".start__link").click(function(event) {
+    enemyPlayer = orc;
+    console.log("orc", orc);
+    console.log("enemyplayer", enemyPlayer);
+    console.log("currentPlayer", currentPlayer);
+    $("#human-stats").append("<p>" + currentPlayer.toString() + "Current Health is "+"<span>"+ currentPlayer.health +"</span><p>"+
+        "<p>Current Strength is "+"<span>"+ currentPlayer.strength+"</span><p>"+
+        "<p>Current Intelligence is "+"<span>"+ currentPlayer.intelligence+"</span><p>"); 
+    
+       $("#enemy-stats").append( "<p>" + orc.toString() + "Current Health is "+"<span>"+ enemyPlayer.health+"</span><p>"+
+          "<p>Current Strength is "+"<span>"+ enemyPlayer.strength+"</span><p>"+
+          "<p>Current Intelligence is "+"<span>"+ enemyPlayer.intelligence+"</span><p>");
+});
+
+//////////attack
 
 
+  $(".attack__link").click(function(event) {
 
-  var refObj = {
-     'Warrior': Warrior,
-     'Valkyrie':  Valkyrie,
-     'Berserker': Berserker,
-     'Monk': Monk,
-     'Wizard': Wizard,
-     'Sorcerer': Sorcerer,
-     'Conjurer': Conjurer,
-     'Thief': Thief,
-     'Ninja': Ninja,
-     'Assassin': Assassin
-   };
+    orcDoIt = Math.round(Math.random() * (enemyPlayer.weapon.damage));
+    heroDoIt = Math.round(Math.random() * (currentPlayer.weapon.damage));
+
+    $("#battle-record").append(
+      "<p>" + enemyPlayer.species + "(" + 
+      enemyPlayer.health + "hp) attacks for " + orcDoIt + " damage.</p>"
+    );
+    $("#battle-record").append(
+      "<p>" + currentPlayer.playerName + "(" + 
+        currentPlayer.health + "hp) attacks for " + heroDoIt + " damage.</p>");
+
+    currentPlayer.health -= orcDoIt;
+    console.log("currentPlayer health: ", currentPlayer.health);
+
+    enemyPlayer.health -= currentPlayer.weapon.damage;
+    console.log("enemyplayer health: ", enemyPlayer.health);
+
+    if (currentPlayer.health <= 0) {
+      alert("The Enemy Won");
+    }
+    if (enemyPlayer.class.health <= 0) {
+      alert("You Win!!!");
+    }
+  })
 });

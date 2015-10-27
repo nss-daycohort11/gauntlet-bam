@@ -24,6 +24,9 @@ var Fighter = function() {
   this.strengthBonus = 10;
 };
 Fighter.prototype = new PlayerClass();
+// this means that fighter inherits from the PlayerClass
+
+
 var Warrior = function() {
   this.name = "Warrior";
   this.healthBonus = this.healthBonus + 25;
@@ -31,6 +34,8 @@ var Warrior = function() {
   this.stealthBonus = this.stealthBonus - 5;
 };
 Warrior.prototype = new Fighter();
+// this means that warrior inherits from the FighterClass
+
 var Valkyrie = function() {
   this.name = "Valkyrie";
   this.healthBonus = this.healthBonus + 20;
@@ -38,6 +43,7 @@ var Valkyrie = function() {
   this.stealthBonus = this.stealthBonus - 5;
 };
 Valkyrie.prototype = new Fighter();
+
 var Berserker = function() {
   this.name = "Berserker";
   this.healthBonus = this.healthBonus + 35;
@@ -45,6 +51,7 @@ var Berserker = function() {
   this.stealthBonus = this.stealthBonus -10;
 };
 Berserker.prototype = new Fighter();
+
 var Monk = function() {
   this.name = "Monk";
   this.healthBonus = this.healthBonus + 10;
@@ -66,6 +73,7 @@ var Mage = function() {
   this.intelligenceBonus = this.intelligenceBonus + 20;
 };
 Mage.prototype = new PlayerClass();
+
 var Shaman = function() {
   this.name = "Shaman";
   this.healthBonus = this.healthBonus + 5;
@@ -73,19 +81,22 @@ var Shaman = function() {
   this.intelligenceBonus = this.intelligenceBonus + 20;
 };
 Shaman.prototype = new Mage();
+
 var Wizard = function() {
   this.name = "Wizard";
-  this.healthBonus = this.healthBonus - 15;
+  this.healthBonus = this.healthBonus - 15;1
   this.strengthBonus = this.strengthBonus - 25;
   this.intelligenceBonus = this.intelligenceBonus + 40;
 };
 Wizard.prototype = new Mage();
+
 var Conjurer = function() {
   this.name = "Conjurer";
   this.strengthBonus = this.strengthBonus - 10;
   this.intelligenceBonus = this.intelligenceBonus + 10;
 };
 Conjurer.prototype = new Mage();
+
 var Sorcerer = function() {
   this.name = "Sorcerer";
   this.healthBonus = this.healthBonus - 5;
