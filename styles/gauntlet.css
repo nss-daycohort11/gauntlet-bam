@@ -17,6 +17,19 @@ body {
 }
 
 
+/*Images*/
+
+.record-name-image {
+  height: 400px;
+  width: 400px;
+  background-image: url("http://media1.popsugar-assets.com/files/upl1/1/13839/33_2008/1OFFakN04/i/Rainn-Wilson-Dwight-Schrute-Ad-Office-2008-Olympics.jpg");
+  repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+
+}
+
 
 /*
   Section styles

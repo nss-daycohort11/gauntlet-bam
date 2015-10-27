@@ -8,12 +8,12 @@ var Barehands = function() {
   }
 };
 
-var Bow = function() {
-  this.name = "bow";
+var beets = function() {
+  this.name = "beets";
   this.damage = 10;
   this.hands = 2;
 };
-Bow.prototype = new Barehands();
+beets.prototype = new Barehands();
 
 var Sword = function() {
   this.name = "sword";
@@ -28,6 +28,3 @@ var Axe = function() {
   this.hands = 2;
 };
 Axe.prototype = new Barehands();
-
-
-
