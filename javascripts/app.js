@@ -42,47 +42,18 @@ $(document).ready(function() {
      case "card--weapon":
        moveAlong = ($("#player-name").val() !== "");
        break;
+     case "card--battleground":
+      moveAlong = ($("#player-name").val() !== "");
+      break;
    }
-
+// when the button clicked, move back a view
    if (moveAlong) {
      $(".card").hide();
      $("." + nextCard).show();
    }
  });
 
-////// save click on characters ////////
- var chosenClass;
-
- $(".class__link").click(function (event) {
-
-     chosenClass = $(this).html();  //getting string value
-     var charSave = new window[chosenClass]();
-     console.log("charsave", charSave);
- })
-
-///////save click on weapons
-
-var chosenWeaponClass;
-
- $(".class__link").click(function (event) {
-     chosenWeaponClass = $(this).html();  //getting string value
-     var weaponSave = new window[chosenWeaponClass]();
-     console.log("weaponSave", weaponSave);
- })
-
-
-
- // function () {
- //   player = new chosenClass();
-
- // }
-
- // var warrior = new Human();
- // warrior.setWeapon(new Axe());
- // warrior.generateClass();  // This will be used for "Surprise me" option
- // console.log("warrior", warrior.toString());
-
- /*
+  /*
    When the back button clicked, move back a view
   */
  $(".card__back").click(function(e) {
@@ -91,18 +62,48 @@ var chosenWeaponClass;
    $("." + previousCard).show();
  });
 
-  var refObj = {
-     'Warrior': Warrior,
-     'Valkyrie':  Valkyrie,
-     'Berserker': Berserker,
-     'Monk': Monk,
-     'Wizard': Wizard,
-     'Sorcerer': Sorcerer,
-     'Conjurer': Conjurer,
-     'Thief': Thief,
-     'Ninja': Ninja,
-     'Assassin': Assassin
-   };
+//current player
+var currentPlayer = new Human();
+
+//store player name
+$("#player-setup .card__button").click(function() { 
+  console.log("Current player name", $("#player-name").val());
+  currentPlayer.playername = $("#player-name").val();
+
+});
+
+////// save click on characters ////////
+ var chosenClass;
+
+ $(".class__link").click(function (event) {
+
+     chosenClass = $(this).html();  
+     var charSave = new window[chosenClass]();
+     console.log("charsave", charSave);
+     currentPlayer.class = charSave;
+     console.log("current player", currentPlayer);
+
+ })
+
+///////save click on weapons
+
+var chosenWeaponClass;
+
+ $(".weapon__link").click(function (event) {
+     chosenWeaponClass = $(this).html();  //getting string value
+     var weaponSave = new window[chosenWeaponClass]();
+      console.log("weaponSave", weaponSave);
+     currentPlayer.Weapon = weaponSave;
+     console.log("current player w/ weapon", currentPlayer);
+
+
+
+  });
+
+
+
+
+
 
 
 
