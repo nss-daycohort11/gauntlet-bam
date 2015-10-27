@@ -41,22 +41,22 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="card__button">
-              <button class="class__link btn btn--big btn--blue" value="warrior">Warrior</button>
+              <button class="class__link btn btn--big btn--blue michael" value="michael">Michael</button>
             </div>      
             
             <div class="card__button">
-              <button class="class__link btn btn--big btn--blue" value="valkyrie">Valkyrie</button>
+              <button class="class__link btn btn--big btn--blue jim" value="jim">Jim</button>
             </div>      
             
             <div class="card__button">
-              <button class="class__link btn btn--big btn--blue" value="berserker">Berserker</button>
+              <button class="class__link btn btn--big btn--blue pam" value="pam">Pam</button>
             </div>      
             
             <div class="card__button">
-              <button class="class__link btn btn--big btn--blue" value="monk">Monk</button>
+              <button class="class__link btn btn--big btn--blue andy" value="andy">Andy</button>
             </div>
           </div>
-          <div class="col-sm-4">
+          <!-- <div class="col-sm-4">
             <div class="card__button">
               <button class="class__link btn btn--big btn--blue" value="wizard">Wizard</button>
             </div>
@@ -83,7 +83,7 @@
             <div class="card__button">
               <button class="class__link btn btn--big btn--yellow" value="surprise me">surprise me</button>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="card__button">
@@ -111,19 +111,24 @@
         <div class="row">
           <div class="col-sm-4">
             <div class="card__button">
-              <button class="class__link btn btn--big btn--blue" value="bare-hands">Barehands</button>
+              <button class="weapon__link btn btn--big btn--blue" value="bare-hands">Barehands</button>
             </div>      
             
             <div class="card__button">
-              <button class="class__link btn btn--big btn--blue" value="bow">Bow</button>
+              <button class="weapon__link btn btn--big btn--blue" value="beets">Beets</button>
             </div>      
             
             <div class="card__button">
-              <button class="class__link btn btn--big btn--blue" value="sword">Sword</button>
+              <button class="weapon__link btn btn--big btn--blue" value="banjo">Banjo</button>
             </div>      
             
             <div class="card__button">
-              <button class="class__link btn btn--big btn--blue" value="axe">Axe</button>
+              <button class="weapon__link btn btn--big btn--blue" value="angelas_cat">Angelas_Cat</button>
+            </div>
+          </div>
+
+          <div class="card__button">
+              <button class="weapon__link btn btn--big btn--blue" value="nunchucks">Nunchucks</button>
             </div>
           </div>
             
@@ -141,7 +146,24 @@
       </div>
       
     </section>
-    <section id="battleground" class="card card--battleground"></section>
+    <section id="battleground" class="card card--battleground">
+        <div>BATTLEFIELD</div>
+        <span id="startGame" class="card__button start">
+              <button class="start__link btn btn--big btn--orange" 
+                next="card--battle" value="start">
+                <span class="btn__text">Start</span>
+              </button>
+      </span>
+        <span id="attackEnemy" class="card__button enemy">
+              <button class="attack__link btn btn--big btn--orange" 
+                next="card--battle" value="attack">
+                <span class="btn__text">Attack!!!!</span>
+              </button>
+      </span>
+      <div id="human-stats"></div>
+          <div id="enemy-stats"></div>
+        <div  id="battle-record"></div>    
+     </section>
   </article>
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="javascripts/player.js"></script>

@@ -1,15 +1,29 @@
+
+
+
 $(document).ready(function() {
  /*
    Test code to generate a human player and an orc player
   */
  var warrior = new Human();
- warrior.setWeapon(new Axe());
+ warrior.setWeapon(new Beets());
+
  warrior.generateClass();  // This will be used for "Surprise me" option
  console.log("warrior", warrior.toString());
- var orc = new Orc();
- orc.generateClass();
- orc.setWeapon(new Sword());
- console.log("orc", orc.toString());
+
+ var thebadguy = new BadGuys();
+ thebadguy.setWeapon(new Beets());
+ thebadguy.generateClass();
+ console.log("thebadguy", thebadguy.toString());
+ console.log(thebadguy)
+
+
+
+
+
+ // console.log(thebadguy)
+ // console.log('after weapon', thebadguy)
+ console.log("thebadguy", thebadguy.toString());
  /*
    Test code to generate a spell
   */
@@ -34,41 +48,17 @@ $(document).ready(function() {
      case "card--weapon":
        moveAlong = ($("#player-name").val() !== "");
        break;
+     case "card--battleground":
+      moveAlong = ($("#player-name").val() !== "");
+      break;
    }
+// when the button clicked, move back a view
    if (moveAlong) {
      $(".card").hide();
      $("." + nextCard).show();
    }
  });
- // // var refObj = {
- // //   'Warrior': Warrior,
- // //   'Valkyrie': Valkyrie,
- // }
- var chosenClass;
- $(".class__link").click(function (event) {
-   //grab the inner HTML
-   chosenClass = $(this).html();
-   console.log(chosenClass.length);
-   var charSave = new window[chosenClass]();
-   console.log(charSave);
- })  
-  var chosenWeaponClass;
- $(".class__link").click(function (event) {
-   //grab the inner HTML
-   chosenWeaponClass = $(this).html();
-   console.log(chosenClass.length);
-   var weaponSave = new window[chosenWeaponClass]();
-   console.log(weaponSave);
-
-   // var className = event.target.value;
-   // console.log(className);
-   // chosenClass = className;
-   // console.log(chosenClass);
- })
- // function () {
- //   player = new chosenClass();
- // }
- /*
+  /*
    When the back button clicked, move back a view
   */
  $(".card__back").click(function(e) {
@@ -76,16 +66,67 @@ $(document).ready(function() {
    $(".card").hide();
    $("." + previousCard).show();
  });
-  var refObj = {
-     'Warrior': Warrior,
-     'Valkyrie':  Valkyrie,
-     'Berserker': Berserker,
-     'Monk': Monk,
-     'Wizard': Wizard,
-     'Sorcerer': Sorcerer,
-     'Conjurer': Conjurer,
-     'Thief': Thief,
-     'Ninja': Ninja,
-     'Assassin': Assassin
-   };
+//current player
+var currentPlayer = new Human();
+//store player name
+$("#player-setup .card__button").click(function() { 
+  console.log("Current player name", $("#player-name").val());
+  currentPlayer.playerName = $("#player-name").val();
 });
+////// save click on characters ////////
+ var chosenClass;
+ $(".class__link").click(function (event) {
+     chosenClass = $(this).html();  
+     var charSave = new window[chosenClass]();
+     console.log("charsave", charSave);
+     currentPlayer.class = charSave;
+     console.log("current player", currentPlayer);
+ })
+///////save click on weapons
+  var chosenWeaponClass;
+   $(".weapon__link").click(function (event) {
+       chosenWeaponClass = $(this).html();  //getting string value
+       var weaponSave = new window[chosenWeaponClass]();
+        console.log("weaponSave", weaponSave);
+       currentPlayer.weapon = weaponSave;
+       console.log("current player w/ weapon", currentPlayer);
+   });
+////////battlefield
+var enemyPlayer;
+$(".start__link").click(function(event) {
+    enemyPlayer = thebadguy;
+    console.log("thebadguy", thebadguy);
+    console.log("enemyplayer", enemyPlayer);
+    console.log("currentPlayer", currentPlayer);
+    $("#human-stats").append("<p>" + currentPlayer.toString() + "<br/>Current Health is "+"<span>"+ currentPlayer.health +"</span><p>"+
+        "<p>Current Strength is "+"<span>"+ currentPlayer.strength+"</span><p>"+
+        "<p>Current Intelligence is "+"<span>"+ currentPlayer.intelligence+"</span><p><br/>"); 
+    
+       $("#enemy-stats").append( "<p>" + thebadguy.toString() + "<br/>Current Health is "+"<span>"+ enemyPlayer.health+"</span><p>"+
+          "<p>Current Strength is "+"<span>"+ enemyPlayer.strength+"</span><p>"+
+          "<p>Current Intelligence is "+"<span>"+ enemyPlayer.intelligence+"</span><p><br/>");
+});
+////////////attack
+  $(".attack__link").click(function(event) {
+    orcDoIt = Math.round(Math.random() * (enemyPlayer.weapon.damage));
+    heroDoIt = Math.round(Math.random() * (currentPlayer.weapon.damage));
+    $("#battle-record").append(
+      "<p>" + enemyPlayer.species + "(" + 
+      enemyPlayer.health + "hp) attacks for " + orcDoIt + " damage.</p>"
+    );
+    $("#battle-record").append(
+      "<p>" + currentPlayer.playerName + "(" + 
+        currentPlayer.health + "hp) attacks for " + heroDoIt + " damage.</p><br/>");
+    currentPlayer.health -= orcDoIt;
+    console.log("currentPlayer health: ", currentPlayer.health);
+    enemyPlayer.health -= heroDoIt;
+    console.log("enemyplayer health: ", enemyPlayer.health);
+    if (currentPlayer.health <= 0) {
+      alert("The Enemy Won");
+    }
+    else if (enemyPlayer.health <= 0) {
+      alert("You Win!!!");
+    }
+  })
+});
+

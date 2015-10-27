@@ -8,24 +8,30 @@ var Barehands = function() {
   }
 };
 
-var Bow = function() {
-  this.name = "Bow";
+var Beets = function() {
+  this.name = "Beets";
   this.damage = 4;
   this.hands = 1;
 };
-Bow.prototype = new Barehands();
+Beets.prototype = new Barehands();
 
-var Sword = function() {
-  this.name = "Sword";
+var Banjo = function() {
+  this.name = "Banjo";
   this.damage = 14;
   this.hands = 2;
 };
-Sword.prototype = new Barehands();
+Banjo.prototype = new Barehands();
 
-var Axe = function() {  
-  this.name = "Axe";
+var Angelas_Cat = function() {  
+  this.name = "Angelas_Cat";
   this.damage = 18;
   this.hands = 2;
 };
-Axe.prototype = new Barehands();
+Angelas_Cat.prototype = new Barehands();
 
+var Nunchucks = function() {  
+  this.name = "Nunchucks";
+  this.damage = 18;
+  this.hands = 2;
+};
+Nunchucks.prototype = new Barehands();
