@@ -23,6 +23,21 @@ body {
   margin-right: auto;
   padding-top: 5px;
 }
+.battle-align {
+  text-align: center;
+  font-size: 70px;
+  font-weight: bold; 
+  color: blue;
+}
+.battle-img {
+  background-image: url("https://media.giphy.com/media/7AoJzTRD1WzOU/giphy.gif");
+  height: 300px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  repeat: no-repeat;
+  background-size: cover;
+}
 /*
   Section styles
  */
@@ -145,4 +160,28 @@ body {
 .btn__text {
   padding: 0 50px 0 20px;
   border-radius: 0 5px 5px 0;
+}
+.align-btnbattle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.battle-img {
+ background-image: url("https://media.giphy.com/media/7AoJzTRD1WzOU/giphy.gif (488KB)
+
+");
+ height: 300px;
+ width: 400px;
+ margin-left: auto;
+ margin-right: auto;
+ repeat: no-repeat;
+ background-size: cover;
+}
+
+.battle-align {
+ text-align: center;
+ font-size: 70px;
+ font-weight: bold; 
+ color: blue;
 }
