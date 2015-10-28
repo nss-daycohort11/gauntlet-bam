@@ -19,6 +19,5 @@ var BadGuys = function() {
   //   return this.class;
   // }
 };
-
 BadGuys.prototype = new Monster();
 

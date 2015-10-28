@@ -6,7 +6,7 @@ var Player = function(name) {
   this.species = null;
   this.class = null;
   this.weapon = null;
-  this.playerName = name || "Unknown adventurer";
+  this.playerName = name || "His opponent: ";
   this.health = Math.floor(Math.random() * 40 + 50);
   this.limbs = ["head", "neck", "arm", "leg", "torso"];
   this.skinColor = "gray";
@@ -18,7 +18,7 @@ var Player = function(name) {
     // console.log(this.weapon.toString())
     // console.log("class", this.class)
     var output = [this.playerName,
-      ": a ",
+      " a ",
       this.skinColor,
       " skinned ",
       this.species,
@@ -27,16 +27,20 @@ var Player = function(name) {
       " with ",
       this.health,
       " health. ",
-      " Wielding a ",
+      " Wielding ",
       this.weapon.toString(),
       "!"
-    ].join("");
+    ].join("");      //what does join mean here?
     return output;
   };
 };
+
+
 Player.prototype.setWeapon = function(newWeapon) {
   this.weapon = newWeapon;
 }
+
+
 Player.prototype.generateClass = function() {
   // Get a random index from the allowed classes array
   var random = Math.round(Math.random() * (this.allowedClasses.length - 1));
@@ -52,6 +56,8 @@ Player.prototype.generateClass = function() {
   this.health += this.class.healthBonus;
   return this.class;
 };
+
+
 /*
   Define the base properties for a human in a 
   constructor function.
@@ -66,6 +72,8 @@ var Human = function() {
   this.allowedClasses = ["Michael", "Jim", "Pam", "Andy",];
 };
 Human.prototype = new Player();
+
+
 /*
   Define the base properties for a monster in a 
   constructor function.

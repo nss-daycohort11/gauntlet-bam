@@ -73,9 +73,9 @@ $("#player-setup .card__button").click(function() {
  $(".class__link").click(function (event) {
      chosenClass = $(this).html();  
      var charSave = new window[chosenClass]();
-     console.log("charsave", charSave);
+     // console.log("charsave", charSave);
      currentPlayer.class = charSave;
-     console.log("current player", currentPlayer);
+     // console.log("current player", currentPlayer);
  })
 
 
@@ -84,9 +84,9 @@ $("#player-setup .card__button").click(function() {
    $(".weapon__link").click(function (event) {
        chosenWeaponClass = $(this).html();  //getting string value
        var weaponSave = new window[chosenWeaponClass]();
-        console.log("weaponSave", weaponSave);
+      // console.log("weaponSave", weaponSave);
        currentPlayer.weapon = weaponSave;
-       console.log("current player w/ weapon", currentPlayer);
+       // console.log("current player w/ weapon", currentPlayer);
    });
 
 
@@ -94,9 +94,9 @@ $("#player-setup .card__button").click(function() {
 var enemyPlayer;
 $(".start__link").click(function(event) {
     enemyPlayer = thebadguy;
-    console.log("thebadguy", thebadguy);
-    console.log("enemyplayer", enemyPlayer);
-    console.log("currentPlayer", currentPlayer);
+    // console.log("thebadguy", thebadguy);
+    // console.log("enemyplayer", enemyPlayer);
+    // console.log("currentPlayer", currentPlayer);
     $("#human-stats").append("<p>" + currentPlayer.toString() + "<br/>Current Health is "+"<span>"+ currentPlayer.health +"</span><p>"+
         "<p>Current Strength is "+"<span>"+ currentPlayer.strength+"</span><p>"+
         "<p>Current Intelligence is "+"<span>"+ currentPlayer.intelligence+"</span><p><br/>"); 
@@ -110,9 +110,9 @@ $(".start__link").click(function(event) {
 ////////////attack
   $(".attack__link").click(function(event) {
 
-    if (currentPlayer.health || enemyPlayer.health >= 0) {
+    // while (currentPlayer.health || enemyPlayer.health >= 0) {
 
-
+        
 
         orcDoIt = Math.round(Math.random() * (enemyPlayer.weapon.damage));
         heroDoIt = Math.round(Math.random() * (currentPlayer.weapon.damage));
@@ -124,16 +124,16 @@ $(".start__link").click(function(event) {
           "<p>" + currentPlayer.playerName + "(" + 
             currentPlayer.health + "hp) attacks for " + heroDoIt + " damage.</p><br/>");
         currentPlayer.health -= orcDoIt;
-        console.log("currentPlayer health: ", currentPlayer.health);
+        // console.log("currentPlayer health: ", currentPlayer.health);
         enemyPlayer.health -= heroDoIt;
-        console.log("enemyplayer health: ", enemyPlayer.health);
+        // console.log("enemyplayer health: ", enemyPlayer.health);
         if (currentPlayer.health <= 0) {
           alert("The Enemy Won");
         }
-        else if (enemyPlayer.health <= 0) {
+        else if (enemyPlayer.health <= 0) {    //what's the best way to end the game here?
           alert("You Win!!!");
         }
-    }
+    // }
   })
 });
 
@@ -141,7 +141,22 @@ $(".start__link").click(function(event) {
 var theme = new Audio('http://www.warnersdock.com/OFFICE.mp3'); //song plays on page load
 theme.play();
 
-// $(".attack").click(function(event))
+
+
+$(".attack").click(function(event) {
+  var hit = new Audio('sound/Left Hook-SoundBible.com-516660386.mp3');  //Right Cross-SoundBible.com-1721311663.mp3
+  hit.play();
+});
+
+
+$(".start").click(function(event) {
+  var hit = new Audio('sound/dwightWeapons.mp3');  //Right Cross-SoundBible.com-1721311663.mp3
+  hit.play();
+});
+
+
+
+
 
 
 
