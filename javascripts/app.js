@@ -116,3 +116,5 @@ $(".start__link").click(function(event) {
   })
 });
 
+var theme = new Audio('http://www.warnersdock.com/OFFICE.mp3'); //song plays on page load
+theme.play();
